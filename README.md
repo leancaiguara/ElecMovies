@@ -57,7 +57,7 @@ $ npm install
 $ npm start
 ```
 
-## Contact
+## Contacto
 
 - GitHub [@leancaiguara](https://github.com/leancaiguara)
 - Linkedin [@leandrocaiguara](https://www.linkedin.com/in/leandro-caiguara)
