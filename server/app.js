@@ -36,8 +36,6 @@ app.use(passport.session());
 //routes
 app.use("/api", routes);
 
-//static files
-
 //server
 db.sync({}).then(() =>
   app.listen(process.env.PORT || 8000, () => {

@@ -6,7 +6,7 @@ import { Box, Center, Image, Button, useColorModeValue } from "@chakra-ui/react"
 
 export const Card = ({ img, title, movieId }) => {
   const bg = useColorModeValue("##FFFFFF", "black");
-  const color = useColorModeValue("white", "gray.800");
+
   return (
     <Center bg={bg} py="10px" px="10px">
       <Link to={`movie/${movieId}`}>

@@ -29,7 +29,6 @@ Favorites.init(
   { sequelize: db, modelName: "favorite" }
 );
 
-// Las peliculas favoritas pertenecen al usuario
 Favorites.User = Favorites.belongsTo(User);
 
 module.exports = Favorites;

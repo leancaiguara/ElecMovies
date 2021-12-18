@@ -4,7 +4,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Checkbox,
   Stack,
   Button,
   Heading,
@@ -22,7 +21,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-////////////////////////////
 export const Form = ({ modo }) => {
   const bg = useColorModeValue("rgb(255,255,255)", "black");
   const color = useColorModeValue("black", "white");
@@ -39,10 +37,8 @@ export const Form = ({ modo }) => {
   });
 
   const [nose, setNose] = useState(false);
-  console.log("esto qcy", values);
 
   const navigate = useNavigate();
-  console.log("valores", values);
 
   function handleChange(e) {
     const { target } = e;
@@ -58,11 +54,15 @@ export const Form = ({ modo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (values.password.length < 5 || values.password.length > 20)
+    if (
+      values.password.length < 4 ||
+      values.password.length > 25 ||
+      values.username.length < 3 ||
+      values.username.length > 25
+    )
       setAlert({ sucess: false, rejected: true });
     else {
       const ruta = modo === "register" ? "signup" : "signin";
-      console.log("esto es el login", values);
       axios.post(`/api/auth/${ruta}`, values).then((resp) => {
         resp && setNose(true);
         setAlert({ sucess: true, rejected: false });

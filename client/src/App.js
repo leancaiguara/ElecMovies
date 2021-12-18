@@ -1,6 +1,6 @@
 //react-router
 
-import { BrowserRouter as Router, Route, Routes, Switch, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
 //views
 import { Home } from "./views/Home";

@@ -1,4 +1,3 @@
-import { order } from "../utils/order";
 import axios from "axios";
 //react
 import { useEffect, useState } from "react";

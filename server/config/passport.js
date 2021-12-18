@@ -23,14 +23,11 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-  console.log("esto es de serializar", user.id);
   done(null, user.id);
 });
 passport.deserializeUser((id, done) => {
-  console.log("esta entrando aca?");
   User.findByPk(id)
     .then((user) => {
-      console.log("deserializando", user);
       done(null, user);
     })
     .catch(done);

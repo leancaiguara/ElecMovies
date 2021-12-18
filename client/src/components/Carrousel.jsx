@@ -1,7 +1,3 @@
-import { order } from "../utils/order";
-
-//react
-import { useState, useEffect } from "react";
 // react slick
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,7 +12,6 @@ import { Card } from "./Card";
 
 export const Carrousel = ({ movies }) => {
   const bg = useColorModeValue("rgb(255,255,255)", "rgb(24,26,32)");
-  const color = useColorModeValue("black", "white");
 
   const settings = {
     infinite: true,

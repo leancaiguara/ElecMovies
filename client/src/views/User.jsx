@@ -4,18 +4,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
-import { useNavigate } from "react-router";
+
 //chakra ui
-import {
-  Box,
-  useColorModeValue,
-  Heading,
-  Button,
-  useColorMode,
-  Text,
-  Image,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, useColorModeValue, Heading, Button, Text, Image, useDisclosure } from "@chakra-ui/react";
 import { Table, Thead, Tbody, Tr, Th, Td, IconButton, ButtonGroup, Textarea } from "@chakra-ui/react";
 import {
   Modal,
@@ -32,9 +23,7 @@ import { Navbar } from "../components/Navbar";
 
 export const User = () => {
   const bg = useColorModeValue("rgb(255,255,255)", "#000000");
-  const color = useColorModeValue("black", "white");
-  const { colorMode, toggleColorMode } = useColorMode();
-  const navigate = useNavigate();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [movies, setMovies] = useState([]);
@@ -172,4 +161,3 @@ export const User = () => {
     </Box>
   );
 };
-//<Navigate to="/" replace={true} />

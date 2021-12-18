@@ -1,4 +1,4 @@
-import { order } from "../utils/order";
+import axios from "axios";
 import { useQuery } from "../hooks/useQuery";
 //react
 import { useState, useEffect } from "react";
@@ -9,7 +9,6 @@ import { Box, SimpleGrid, useColorModeValue, Heading } from "@chakra-ui/react";
 //components
 import { Card } from "./Card";
 import { Carrousel } from "./Carrousel";
-
 
 export const Grid = () => {
   const bg = useColorModeValue("#FAFAFA", "rgb(24,26,32)");
@@ -24,7 +23,9 @@ export const Grid = () => {
 
   useEffect(() => {
     const searchIn = search ? `/search/${search}` : "/discover";
-    order(`/api/movie${searchIn}`)
+    axios
+      .get(`/api/movie${searchIn}`)
+      .then((res) => res.data)
       .then((data) => {
         setMovies(data.results);
       })
@@ -32,7 +33,9 @@ export const Grid = () => {
   }, [search]);
 
   useEffect(() => {
-    order("/api/movie/discover")
+    axios
+      .get("/api/movie/discover")
+      .then((res) => res.data)
       .then((data) => {
         setCarru(data.results);
       })

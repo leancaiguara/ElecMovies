@@ -4,13 +4,7 @@ const User = require("../models/User");
 class FavoriteCtrl {
   static async createFavorite(req, res) {
     try {
-      const newFavorite = await Favorite.create({
-        movieId: req.body.movieId,
-        userId: req.body.userId,
-        title: req.body.title,
-        value: req.body.value,
-        img: req.body.img,
-      });
+      const newFavorite = await Favorite.create(req.body);
       res.status(200).send(newFavorite);
     } catch (err) {
       res.status(500).send(console.log(err));
@@ -23,7 +17,6 @@ class FavoriteCtrl {
         where: {
           userId: req.params.id,
         },
-        // Queremos que incluya la relación "oficina"
         include: [
           {
             association: Favorite.User,
