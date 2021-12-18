@@ -60,6 +60,6 @@ $ npm start
 ## Contact
 
 - GitHub [@leancaiguara](https://github.com/leancaiguara)
-- Twitter [@leandrocaiguara](https://www.linkedin.com/in/leandro-caiguara)
+- Linkedin [@leandrocaiguara](https://www.linkedin.com/in/leandro-caiguara)
 
 
